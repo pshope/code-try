@@ -12,7 +12,7 @@
         <module>bad-sample</module>
         <module>strategy-via-enum</module>
         <module>command-pattern</module>
-        <module>java-supplier</module>
+        <module>supplier</module>
     </modules>
 
 

@@ -11,7 +11,6 @@ public class CommandTest {
                 .call(""));
         System.out.println(createClientCommand.createClient("WEBSERVICE")
                 .call(""));
-
         System.out.println(createClientCommand.createClient("Invalid")
                 .call(""));
     }

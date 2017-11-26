@@ -14,35 +14,17 @@ public class CreateClientCommand {
     private static Map<String, Command> CLIENTS = new HashMap<>();
 
     static {
-        final Map<String, Command> clients = new HashMap<>();
-        CLIENTS.put("FILE", new Command() {
-            @Override
-            public IntegrationClient create() {
-                return new FileIntegrationClient();
-            }
-        });
+        CLIENTS.put("FILE", FileIntegrationClient::new);
 
     }
 
     static {
-        final Map<String, Command> clients = new HashMap<>();
-        CLIENTS.put("QUEUE", new Command() {
-            @Override
-            public IntegrationClient create() {
-                return new MessageQueueIntegrationClient();
-            }
-        });
+        CLIENTS.put("QUEUE", MessageQueueIntegrationClient::new);
 
     }
 
     static {
-        final Map<String, Command> clients = new HashMap<>();
-        CLIENTS.put("WEBSERVICE", new Command() {
-            @Override
-            public IntegrationClient create() {
-                return new WebserviceIntegrationClient();
-            }
-        });
+        CLIENTS.put("WEBSERVICE", WebserviceIntegrationClient::new);
 
     }
 
