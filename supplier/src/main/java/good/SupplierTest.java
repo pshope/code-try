@@ -1,5 +1,7 @@
 package good;
 
+import bad.clients.IntegrationClient;
+
 public class SupplierTest {
 
 
