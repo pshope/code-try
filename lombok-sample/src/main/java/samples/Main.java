@@ -29,5 +29,10 @@ public class Main {
         .build().toString());
 
 
+        PaymentWithLombok.builder().id(null)
+                .creditor("sa")
+                .debtor("sa").build();
+
+
     }
 }
