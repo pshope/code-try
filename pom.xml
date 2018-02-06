@@ -15,6 +15,7 @@
         <module>supplier</module>
         <module>lombok-sample</module>
         <module>autovalue-sample</module>
+        <module>template-method-dp</module>
     </modules>
 
 
