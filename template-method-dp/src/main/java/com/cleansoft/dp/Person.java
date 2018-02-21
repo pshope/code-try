@@ -9,6 +9,9 @@ public abstract class Person {
         sleep();
     }
 
+
+
     abstract void wakeup();
+    abstract void work();
     abstract void sleep();
 }

@@ -16,6 +16,7 @@
         <module>lombok-sample</module>
         <module>autovalue-sample</module>
         <module>template-method-dp</module>
+        <module>chainof-responsibility-pattern</module>
     </modules>
 
 
