@@ -7,6 +7,11 @@ public class Mother extends Person{
     }
 
     @Override
+    void work() {
+
+    }
+
+    @Override
     void sleep() {
         System.out.println("Mother sleep at 12.00 PM");
     }

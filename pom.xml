@@ -17,6 +17,10 @@
         <module>autovalue-sample</module>
         <module>template-method-dp</module>
         <module>chainof-responsibility-pattern</module>
+        <module>javastreams</module>
+        <module>print-screen</module>
+        <module>mockito-samples</module>
+        <module>bamboo-build-verifier</module>
     </modules>
 
 
