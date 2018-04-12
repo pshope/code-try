@@ -3,7 +3,8 @@ package com.progressoft.bamboo.libfolder;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.util.Objects.isNull;
 
@@ -18,15 +19,26 @@ public class BambooBuildJarsVerifier implements BambooVerifier<BuildJarsVerifica
     }
 
     private void verifyEmptyJars(BuildJarsVerificationRequest request) {
-        File[] files = new File(request.jarFilesDirectoryPath).listFiles();
+        List<File> files = new ArrayList<File>();
+        allFiles(request.jarFilesDirectoryPath, files);
+        System.out.println("Number of files to be verified: " + files.size());
+        files.stream().filter(file -> file.length() == 0 && file.getName().contains(".jar"))
+                .peek(d -> System.out.println("Found empty file: " + d.getAbsoluteFile().getName()))
+                .forEach(File::delete);
+    }
 
+    private void allFiles(String directoryName, List<File> files) {
+        File directory = new File(directoryName);
 
-        if (!isNull(files)) {
-            if (Arrays.stream(files).filter(file -> file.length() == 0).count() > 0) {
-                throw new EmptyJarFileException("There is an empty jar file in your build lib path");
+        File[] fList = directory.listFiles();
+        assert fList != null;
+        for (File file : fList) {
+            if (file.isFile()) {
+                files.add(file);
+            } else if (file.isDirectory()) {
+                allFiles(file.getAbsolutePath(), files);
             }
         }
-
     }
 
 
