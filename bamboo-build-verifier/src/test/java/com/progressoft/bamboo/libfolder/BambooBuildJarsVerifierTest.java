@@ -1,6 +1,5 @@
 package com.progressoft.bamboo.libfolder;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -42,11 +41,10 @@ public class BambooBuildJarsVerifierTest {
 
 
     @Test
-    public void givenRequestWithDirectoriesHavingEmptyJars_whenVerify_thenDeleteAllEmptyJars()
-    {
+    public void givenRequestWithDirectoriesHavingEmptyJars_whenVerify_thenDeleteAllEmptyJars() {
         buildJarsVerifier.verify(new BuildJarsVerificationRequest(withSubDirectoriesPath));
         File directory = new File(invalidLibPath);
-        assertTrue(directory.listFiles().length==2);
+        assertTrue(directory.listFiles().length == 2);
     }
 
     @Test
